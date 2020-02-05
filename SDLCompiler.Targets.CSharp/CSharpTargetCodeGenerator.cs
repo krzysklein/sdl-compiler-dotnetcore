@@ -42,6 +42,17 @@ namespace SDLCompiler.Targets.CSharp
             {
                 return "void";
             }
+            else if (type.IsArrayType)
+            {
+                var arrayType = type as ArrayType;
+                var baseType = _GetTypeString(arrayType.BaseType);
+                var sb = new StringBuilder(baseType);
+                for (int i = 0; i < arrayType.NumArrayDimensions; i++)
+                {
+                    sb.Append("[]");
+                }
+                return sb.ToString();
+            }
             else if (type.IsInternalType)
             {
                 var typeMappings = new Dictionary<string, string>
@@ -62,17 +73,6 @@ namespace SDLCompiler.Targets.CSharp
                     throw new Exception($"Use of unknown internal type {type.Name}");
                 }
                 return typeMappings[type.Name];
-            }
-            else if (type.IsArrayType)
-            {
-                var arrayType = type as ArrayType;
-                var baseType = _GetTypeString(arrayType.BaseType);
-                var sb = new StringBuilder(baseType);
-                for (int i = 0; i < arrayType.NumArrayDimensions; i++)
-                {
-                    sb.Append("[]");
-                }
-                return sb.ToString();
             }
             else if (type.IsModelType)
             {

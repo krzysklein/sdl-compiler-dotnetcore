@@ -94,8 +94,11 @@ namespace SDLCompiler.Parser
 
             public override object VisitArrayType([NotNull] SDLParser.ArrayTypeContext context)
             {
-                // TODO
-                throw new System.NotImplementedException();
+                var baseType = VisitBasicType(context.basicType()) as Type;
+                var name = baseType.Name;
+                int numArrayDimensions = context.LeftBracket().Length;
+                var arrayType = new ArrayType(baseType, name, numArrayDimensions);
+                return arrayType;
             }
 
             public override object VisitModelType([NotNull] SDLParser.ModelTypeContext context)

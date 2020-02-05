@@ -15,7 +15,7 @@ namespace SDLCompiler.App
 
 model HelloRequest
 {
-	string Name;
+	string[] Names;
 }
 
 model HelloResult
