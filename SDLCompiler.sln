@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDLCompiler.App", "SDLCompi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDLCompiler.Domain", "SDLCompiler.Domain\SDLCompiler.Domain.csproj", "{2A4C7117-8639-4F93-829F-1A3E0EBBA66B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDLCompiler.Web", "SDLCompiler.Web\SDLCompiler.Web.csproj", "{C63AC30B-691B-439E-9ED5-A18CCEAEA833}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDLCompiler.WebHost", "SDLCompiler.WebHost\SDLCompiler.WebHost.csproj", "{8FF93304-01FA-45CB-890F-8A69C8E0D60B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{2A4C7117-8639-4F93-829F-1A3E0EBBA66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A4C7117-8639-4F93-829F-1A3E0EBBA66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A4C7117-8639-4F93-829F-1A3E0EBBA66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63AC30B-691B-439E-9ED5-A18CCEAEA833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63AC30B-691B-439E-9ED5-A18CCEAEA833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63AC30B-691B-439E-9ED5-A18CCEAEA833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63AC30B-691B-439E-9ED5-A18CCEAEA833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF93304-01FA-45CB-890F-8A69C8E0D60B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF93304-01FA-45CB-890F-8A69C8E0D60B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF93304-01FA-45CB-890F-8A69C8E0D60B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF93304-01FA-45CB-890F-8A69C8E0D60B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

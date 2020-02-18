@@ -8,7 +8,7 @@ namespace SDLCompiler.Parser
     {
         public CompilationResult Compile(TextReader reader)
         {
-            var parser = _BuildParser(reader);
+            var parser = BuildParser(reader);
             var file = parser.file();
             var visitor = new Visitor();
             visitor.Visit(file);
@@ -16,7 +16,7 @@ namespace SDLCompiler.Parser
             return result;
         }
 
-        private SDLParser _BuildParser(TextReader reader)
+        private SDLParser BuildParser(TextReader reader)
         {
             var stream = new AntlrInputStream(reader);
             var lexer = new SDLLexer(stream);

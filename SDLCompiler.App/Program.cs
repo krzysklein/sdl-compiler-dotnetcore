@@ -10,22 +10,14 @@ namespace SDLCompiler.App
     {
         static void Main(string[] args)
         {
+            // This code is for testing purposes only at the moment.
+            // In the future here will be a code for the command-line compiler tool.
+
+
             string sample = @"
-// Simple Hello Service
-
-model HelloRequest
+service CalcService
 {
-	string[] Names;
-}
-
-model HelloResult
-{
-	string Output;
-}
-
-service HelloService
-{
-	HelloResult SayHello(HelloRequest request);
+	int Sum(int[] numbers);
 }
 ";
 
@@ -38,13 +30,15 @@ service HelloService
             foreach (var model in compilationResult.Models)
             {
                 targetCodeGenerator.WriteModelCode(model, Console.Out);
-
             }
 
-#if DEBUG
-            Console.WriteLine("End.");
-            Console.ReadKey();
-#endif
+            foreach (var service in compilationResult.Services)
+            {
+                targetCodeGenerator.WriteInterfaceCode(service, Console.Out);
+                targetCodeGenerator.WriteEmptyServiceCode(service, Console.Out);
+                targetCodeGenerator.WriteClientServiceCode(service, Console.Out);
+                targetCodeGenerator.WriteServerServiceCode(service, Console.Out);
+            }
         }
     }
 }
